@@ -12,6 +12,13 @@ public class conversorMoneda {
 		moneyValueList1Jul2023.put("REAL", 53.54);
 
 		String moneyAmountString = JOptionPane.showInputDialog("Enter the amount in " + moneyType + ": ");
+		try {
+			Double.parseDouble(moneyAmountString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double moneyAmountDouble = Double.parseDouble(moneyAmountString);
 		double moneyTypeToPesos = moneyAmountDouble * moneyValueList1Jul2023.get(moneyType);
 		String message = "those are " + moneyTypeToPesos;
@@ -26,6 +33,13 @@ public class conversorMoneda {
 		moneyValueList1Jul2023.put("REAL", 53.54);
 
 		String pesosAmountString = JOptionPane.showInputDialog("Enter the amount in " + moneyType + ": ");
+		try {
+			Double.parseDouble(pesosAmountString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double pesosAmountDouble = Double.parseDouble(pesosAmountString);
 		double pesosToMoneyType = pesosAmountDouble / moneyValueList1Jul2023.get(moneyType);
 		String message = "those are " + pesosToMoneyType;
@@ -63,6 +77,13 @@ public class conversorMoneda {
 
 	static void celciousToFahrenheit() {
 		String celciousString = JOptionPane.showInputDialog("Enter the celcius temperature: ");
+		try {
+			Double.parseDouble(celciousString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double celciousDouble = Double.parseDouble(celciousString);
 		double conversion = (celciousDouble * 9 / 5) + 32;
 		String message = "the amount of " + celciousDouble + "°C to fahrenheit is: " + conversion + "°F";
@@ -71,6 +92,13 @@ public class conversorMoneda {
 
 	static void celciousToKelvin() {
 		String celciousString = JOptionPane.showInputDialog("Enter the celcius temperature: ");
+		try {
+			Double.parseDouble(celciousString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double celciousDouble = Double.parseDouble(celciousString);
 		double conversion = celciousDouble + 273.15;
 		String message = "the amount of " + celciousDouble + "°C to kelvin is: " + conversion + "°K";
@@ -79,6 +107,13 @@ public class conversorMoneda {
 
 	static void kelvinToCelcious() {
 		String kelvinString = JOptionPane.showInputDialog("Enter the kelvin temperature: ");
+		try {
+			Double.parseDouble(kelvinString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double kelvinDouble = Double.parseDouble(kelvinString);
 		double conversion = kelvinDouble + 273.15;
 		String message = "the amount of " + kelvinDouble + "°K to celcious is: " + conversion + "°C";
@@ -87,6 +122,13 @@ public class conversorMoneda {
 
 	static void kelvinToFahrenheit() {
 		String kelvinString = JOptionPane.showInputDialog("Enter the kelvin temperature: ");
+		try {
+			Double.parseDouble(kelvinString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double kelvinDouble = Double.parseDouble(kelvinString);
 		double conversion = (kelvinDouble * 9 / 5) - 459.67;
 		String message = "the amount of " + kelvinDouble + "°K to fahrenheit is: " + conversion + "°F";
@@ -95,6 +137,13 @@ public class conversorMoneda {
 
 	static void fahrenheitToKelvin() {
 		String fahrenheitString = JOptionPane.showInputDialog("Enter the fahrenheit temperature: ");
+		try {
+			Double.parseDouble(fahrenheitString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double fahrenheitDouble = Double.parseDouble(fahrenheitString);
 		double conversion = (fahrenheitDouble + 459.67) * 5 / 9;
 		String message = "the amount of " + fahrenheitDouble + "°F to Kelvin is: " + conversion + "°K";
@@ -103,6 +152,13 @@ public class conversorMoneda {
 
 	static void fahrenheitToCelcious() {
 		String fahrenheitString = JOptionPane.showInputDialog("Enter the fahrenheit temperature: ");
+		try {
+			Double.parseDouble(fahrenheitString);
+		} catch (NumberFormatException e) {
+			System.out.println(e);
+			JOptionPane.showMessageDialog(null, "Invalid Input. Should be a number");
+			return;
+		}
 		double fahrenheitDouble = Double.parseDouble(fahrenheitString);
 		double conversion = (fahrenheitDouble - 32) * 5 / 9;
 		String message = "the amount of " + fahrenheitDouble + "°F to Celcious is: " + conversion + "°C";
@@ -141,7 +197,7 @@ public class conversorMoneda {
 
 		while (keepUsingApp) {
 			Object[] mainMenu = { "Money conversor", "Temperature conversor" };
-			
+
 			Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input",
 					JOptionPane.INFORMATION_MESSAGE, null, mainMenu, mainMenu[0]);
 			System.out.println(selectedValue);
@@ -154,15 +210,14 @@ public class conversorMoneda {
 				keepUsingApp = false;
 				break;
 			}
-			
-			int exitOption = JOptionPane.showConfirmDialog(null,
-		             "Would you like to keep using the app?", "choose one", JOptionPane.YES_NO_OPTION);
+
+			int exitOption = JOptionPane.showConfirmDialog(null, "Would you like to keep using the app?", "choose one",
+					JOptionPane.YES_NO_OPTION);
 			System.out.println(exitOption);
 			if (exitOption == 1) {
 				keepUsingApp = false;
 			}
 		}
-		
 
 	}
 
